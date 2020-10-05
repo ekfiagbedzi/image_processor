@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Aug 25 17:30:14 2020
+
+@author: biopython
+"""
+import torch
+from torch.utils.data import Dataset
+# load and split data into training, validation and testing images
+class PlantDataset(Dataset):
+    """Loads the Image data and zips it with corresponding probabilities as 
+    labels
+    """
+    
+    def __init__(self, df, state=None, transforms=None):
+        self.df = df
+        self.transforms = transforms
+        self.state = state
+
+    def __len__(self):   # gets num of Images
+        return self.df.shape[0]
+
+    def __getitem__(self, idx, dir_path=img_path):   # selects image by index
+        image_path = (img_path 
+                      + self.state 
+                      + self.df.loc[idx, 'image_id'] 
+                      + '.jpg')
+        
+        image = Image.open(image_path)
+
+        if self.transforms:
+            transformed = self.transforms(image)
+        
+        labels = np.array(self.df.iloc[idx, 1])
+        labels = torch.from_numpy(labels)
+        
+        return transformed, labels
