@@ -1,0 +1,8 @@
+setup.py
+DatasetCreator/DatasetCreater.py
+DatasetCreator/__init__.py
+DatasetCreator.egg-info/PKG-INFO
+DatasetCreator.egg-info/SOURCES.txt
+DatasetCreator.egg-info/dependency_links.txt
+DatasetCreator.egg-info/not-zip-safe
+DatasetCreator.egg-info/top_level.txt
