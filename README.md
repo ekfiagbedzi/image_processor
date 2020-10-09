@@ -13,4 +13,4 @@ run "pip install DatasetCreator" in your python interpretor
 
 USAGE
 from DatasetCreator import PlantDataset, viewImages
-PlantDataset()
+PlantDataset(transforms_list, path, filename)
