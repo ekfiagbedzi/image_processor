@@ -1,9 +1,16 @@
 # image_processor
-Creates Image datasets for deep learning tasks
+DESCRIPTION
+This is a package that can be used to create a custom image dataset.
+It uses Pytorch functionality to,
+1. Load image data
+2. Load image labels
+3. Apply custom transforms to the images and finally converts them into tensors for deep learning.
+4. Creates a dataset object from which a DataLoader object could be created.
+5. Can also be used to denormalize and view images using the "viewImages" function.
 
-Contains the files;
-Module_creation.py - Main script. Creates Pytorch image dataset with transforms
+INSTALLATION
+run "pip install DatasetCreator" in your python interpretor
 
-Dataset_creater.py - Called by Module_creation.py module to create a Pytorch image dataset
-
-Dataset_class.py - Creates a pytorch Dataset Object. Contains a function for viewing sample images of the datasets
+USAGE
+from DatasetCreator import PlantDataset, viewImages
+PlantDataset()
